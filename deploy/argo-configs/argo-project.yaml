@@ -1,0 +1,20 @@
+apiVersion: argoproj.io/v1alpha1
+kind: AppProject
+metadata:
+  name: sock-shop
+  namespace: argocd
+spec:
+  clusterResourceWhitelist:
+    - group: ""
+      kind: ""
+  description: sock-shop project configuration
+  destinations:
+    - namespace: sock-shop
+      server: https://kubernetes.default.svc
+    - namespace: argocd
+      server: https://kubernetes.default.svc
+  namespaceResourceWhitelist:
+    - group: "*"
+      kind: "*"
+  sourceRepos:
+    - https://github.com/canerturkaslan/microservices-demo.git
