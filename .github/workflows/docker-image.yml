@@ -30,4 +30,4 @@ jobs:
         with:
           context: deploy/kubernetes
           push: true
-          tags: user/app:latest
+          tags: canerturkaslan/sock-shop:latest
